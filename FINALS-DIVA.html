@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flowers Website - Restored Effects</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+
+<style>
+/* GLOBAL SYSTEM */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.page {
+  display: none;
+  min-height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.page.active {
+  display: flex !important;
+}
+
+/* ================= PAGE 1 ================= */
+#page1{
+  background-image: url('https://images.unsplash.com/photo-1490750967868-88aa4486c946');
+  background-size: cover;
+  background-position: center;
+  justify-content: center;
+  align-items: center;
+}
+#page1::before{ content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.4); }
+#page1 .login-box{ position: relative; z-index: 1; width: 350px; padding: 30px; border-radius: 20px; background: rgba(255,255,255,0.15); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.25); color: white; text-align: center; }
+#page1 .login-box h1{ font-family: 'Playfair Display', serif; margin-bottom: 10px; font-size: 40px; }
+#page1 input{ width: 100%; padding: 12px; margin: 10px 0; border: none; border-radius: 10px; outline: none; }
+#page1 .btn{ width: 100%; padding: 12px; margin-top: 10px; border: none; border-radius: 30px; background: #ff4fa3; color: white; font-weight: 500; cursor: pointer; transition: 0.3s; }
+#page1 .btn:hover{ background: #ff2f8f; }
+
+/* ================= PAGE 2 & 3 SHARED BASE BUTTONS ================= */
+#page2, #page3 { justify-content: center; align-items: center; }
+#page2 { background-color: #f9f9f9; }
+#page3 { background-color: #ffffff; }
+
+.container { display: flex; gap: 25px; align-items: center; flex-wrap: wrap; justify-content: center; }
+.button-pair { display: flex; gap: 10px; }
+.job-pair { display: flex; gap: 15px; }
+
+.requestyarn-btn { background-color: #000; color: #fff; border: none; border-bottom: 2px solid white; padding: 12px 20px; font-size: 16px; cursor: pointer; transition: all 0.15s ease; }
+.cart-btn { background-color: rgb(255, 216, 20); color: #000; border: none; padding: 12px 45px; font-size: 15px; border-radius: 50px; cursor: pointer; transition: all 0.15s ease; }
+.github-btn { background-color: rgb(46, 164, 79); color: #fff; border: none; border-bottom: 2px solid white; border-radius: 10px; padding: 12px 35px; font-size: 16px; font-weight: bold; cursor: pointer; transition: all 0.15s ease; }
+.get-started-btn { background-color: rgb(121, 82, 179); color: white; border: none; padding: 12px 28px; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: all 0.15s ease; }
+.download-btn { background-color: white; color: rgb(108, 117, 125); border: 2px solid lightgray; padding: 12px 28px; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: all 0.15s ease; }
+.applychuchu-btn { background-color: rgb(10, 102, 194); color: white; border: none; padding: 14px 40px; border-radius: 40px; font-size: 16px; font-weight: bold; cursor: pointer; transition: all 0.15s ease; }
+.save-btn { background-color: white; color: rgb(47, 106, 201); border: 2px solid rgb(47, 106, 201); padding: 14px 30px; border-radius: 40px; font-size: 16px; font-weight: bold; cursor: pointer; transition: all 0.15s ease; }
+
+/* ================= PAGE 3 RESTORED EFFECTS (ONLY PAGE 3) ================= */
+#page3 .requestyarn-btn:hover { background-color: #444; }
+#page3 .requestyarn-btn:active { transform: scale(1.05); opacity: 0.8; }
+
+#page3 .cart-btn:hover { background-color: #f9c700; }
+#page3 .cart-btn:active { background-color: #bf8f00; opacity: 0.8; }
+
+#page3 .github-btn:hover { background-color: #0A6931; }
+#page3 .github-btn:active { background-color: rgb(3, 37, 0); opacity: 0.8; }
+
+#page3 .get-started-btn:hover { background-color: #6848c8; }
+#page3 .get-started-btn:active { background-color: #3f2b7a; }
+
+#page3 .download-btn:hover { background-color: #565555; color: #fff; }
+#page3 .download-btn:active { opacity: 0.8; }
+
+#page3 .applychuchu-btn:hover { background-color: rgb(7, 79, 150); }
+#page3 .applychuchu-btn:active { opacity: 0.8; }
+
+#page3 .save-btn:hover { background-color: rgb(47, 106, 201); color: white; }
+#page3 .save-btn:active { opacity: 0.8; }
+
+/* ================= PAGE 4 ================= */
+#page4 { background-image: url('https://www.travelandleisure.com/thmb/k8XtvMdZYniqxtQYS--CisfbIp0=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-header-wildflowers-crested-butte-colorado-COFLOWERS0424-a35f8aa3de75417ca1a98417835c2a58.jpg'); background-size: cover; background-position: center; justify-content: center; align-items: center; flex-direction: column; }
+#page4 .title { font-family: 'Playfair Display', serif; color: white; font-size: 60px; font-style: italic; text-shadow: 2px 2px 15px rgba(0,0,0,0.6); margin-bottom: 10px; }
+#page4 .subtitle { color: white; font-size: 20px; letter-spacing: 1px; text-shadow: 1px 1px 10px rgba(0,0,0,0.5); margin-bottom: 20px; }
+#page4 audio { width: 300px; }
+
+/* ================= PAGE 5 ================= */
+#page5 { 
+  background-image: url('https://images.unsplash.com/photo-1490750967868-88aa4486c946'); 
+  background-size: cover; 
+  background-position: center; 
+  display: flex;
+  flex-direction: column;
+}
+#page5::before { content: ""; position: absolute; inset: 0; background: rgba(0,0,0,0.35); z-index: 0; }
+
+#page5 .nav { 
+  position: absolute; top: 0; width: 100%; display: flex; justify-content: space-between; padding: 30px 60px; align-items: center; z-index: 10; color: white; 
+}
+#page5 .logo { font-weight: 600; font-size: 18px; }
+#page5 .nav-links { display: flex; gap: 30px; }
+#page5 .nav-links a { color: white; text-decoration: none; font-size: 14px; font-weight: 400; opacity: 0.9; }
+#page5 .login-btn { padding: 8px 20px; background: white; color: black; border-radius: 20px; font-size: 13px; text-decoration: none; font-weight: 600; }
+
+#page5 .hero { 
+  flex: 1; display: flex; justify-content: space-between; align-items: center; padding: 0 100px; position: relative; z-index: 1; width: 100%; 
+}
+#page5 .left { max-width: 500px; color: white; }
+#page5 .title { font-family: 'Playfair Display', serif; font-size: 110px; font-weight: 600; line-height: 1; margin-bottom: 20px; }
+#page5 .subtitle { font-size: 16px; line-height: 1.6; opacity: 0.95; margin-bottom: 30px; }
+#page5 .explore-btn { display: inline-block; padding: 14px 35px; background: white; color: black; border-radius: 30px; text-decoration: none; font-weight: 500; font-size: 15px; }
+
+#page5 .card { 
+  background: rgba(255,255,255,0.12); backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px); 
+  border-radius: 25px; padding: 35px; width: 360px; border: 1px solid rgba(255,255,255,0.2); color: white; 
+}
+#page5 .card h3 { font-size: 20px; margin-bottom: 15px; font-weight: 600; }
+#page5 .card p { font-size: 15px; line-height: 1.6; opacity: 0.9; }
+
+/* ================= PAGINATION ================= */
+.pagination{ position: fixed; bottom: 30px; left: 50%; transform: translateX(-50%); display: flex; gap: 15px; z-index: 100; }
+.pagination a{ width: 40px; height: 40px; display: flex; justify-content: center; align-items: center; text-decoration: none; color: white; font-weight: bold; background: #ff4fa3; border-radius: 50%; border: 1px solid rgba(255,255,255,0.3); transition: 0.3s; font-size: 14px; }
+.pagination a:hover{ background: #ff2f8f; transform: scale(1.1); }
+</style>
+</head>
+
+<body>
+
+<section id="page1" class="page active">
+  <div class="login-box">
+    <h1>🌸 Login</h1>
+    <p>Welcome back to Flowers</p>
+    <input type="text" placeholder="Username"><input type="password" placeholder="Password">
+    <button class="btn" onclick="showPage('page2')">Log In</button>
+  </div>
+</section>
+
+<section id="page2" class="page">
+  <div class="container">
+    <button class="requestyarn-btn">Request now</button>
+    <button class="cart-btn">Add to Cart</button>
+    <button class="github-btn">Sign up</button>
+    <div class="button-pair"><button class="get-started-btn">Get started</button><button class="download-btn">Download</button></div>
+    <div class="job-pair"><button class="applychuchu-btn">Apply on company website</button><button class="save-btn">Save</button></div>
+  </div>
+</section>
+
+<section id="page3" class="page">
+  <div class="container">
+    <button class="requestyarn-btn">Request now</button>
+    <button class="cart-btn">Add to Cart</button>
+    <button class="github-btn">Sign up</button>
+    <div class="button-pair"><button class="get-started-btn">Get started</button><button class="download-btn">Download</button></div>
+    <div class="job-pair"><button class="applychuchu-btn">Apply on company website</button><button class="save-btn">Save</button></div>
+  </div>
+</section>
+
+<section id="page4" class="page">
+  <div class="title">Flowers</div>
+  <div class="subtitle">by Samantha Ebert</div>
+  <audio controls><source src="flowers.mp3.mp3" type="audio/mpeg"></audio>
+</section>
+
+<section id="page5" class="page">
+  <div class="nav">
+    <div class="logo">Flowers</div>
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Gallery</a>
+      <a href="#">About</a>
+    </div>
+    <a class="login-btn" href="#">Log In</a>
+  </div>
+  <div class="hero">
+    <div class="left">
+      <h1 class="title">Flowers</h1>
+      <p class="subtitle">A peaceful world of blooming beauty, inspired by nature’s colors and harmony.</p>
+      <a class="explore-btn" href="#">Explore</a>
+    </div>
+    <div class="card">
+      <h3>About Flowers</h3>
+      <p>Flowers attract pollinators and play a vital role in nature’s ecosystem, symbolizing beauty, growth, and life.</p>
+    </div>
+  </div>
+</section>
+
+<div class="pagination">
+  <a href="#" onclick="event.preventDefault(); showPage('page1')">1</a>
+  <a href="#" onclick="event.preventDefault(); showPage('page2')">2</a>
+  <a href="#" onclick="event.preventDefault(); showPage('page3')">3</a>
+  <a href="#" onclick="event.preventDefault(); showPage('page4')">4</a>
+  <a href="#" onclick="event.preventDefault(); showPage('page5')">5</a>
+</div>
+
+<script>
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
